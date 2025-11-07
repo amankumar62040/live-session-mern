@@ -1,0 +1,202 @@
+/* 🌍 Global reset and font setup */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top left, #1a1a1a, #0d0d0d);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+/* 🌟 Main Container */
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* ✨ Header */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffcc00, #ff6600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* 🟢 Start Session Button */
+button.start-btn {
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
+  border: none;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
+  transform: scale(1);
+}
+
+button.start-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #ff9900, #ff6600);
+  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5);
+}
+
+/* 🔵 Loading Animation */
+.loading {
+  font-size: 1.1rem;
+  color: #ffcc00;
+  animation: pulse 1.5s infinite;
+}
+
+/* 🧾 Session Details */
+.session-details {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: left;
+  animation: slideUp 0.7s ease forwards;
+}
+
+.session-details p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.session-details a {
+  color: #4dc3ff;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.session-details a:hover {
+  text-decoration: underline;
+}
+
+/* 🎥 Video Player Section */
+.video-wrapper {
+  margin-top: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  outline: none;
+}
+
+/* 🕹️ Player Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.controls button,
+.controls select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.controls button:hover,
+.controls select:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* 🌀 Button Press Animation */
+button:active {
+  transform: scale(0.96);
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .controls button,
+  .controls select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  button.start-btn {
+    width: 100%;
+  }
+
+  .session-details {
+    font-size: 0.85rem;
+  }
+}
+
+/* 🌈 Animations */
+@keyframes fadeIn {
+  0% {opacity: 0; transform: translateY(30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  0% {opacity: 0; transform: translateY(40px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0.5;}
+}
+
